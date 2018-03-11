@@ -10,8 +10,8 @@ window.Popper = require('popper.js').default;
 
 try {
     window.$ = window.jQuery = require('jquery');
-
-    require('bootstrap');
+    //Configurar para inclui o no a Bootstrap
+    //require('bootstrap');
 } catch (e) {}
 
 /**
