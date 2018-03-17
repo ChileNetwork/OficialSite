@@ -2,11 +2,11 @@
   <div class="container">
     <div class="navbar-brand">
       <a class="navbar-item is-paddingless brand-item" href="{{route('home')}}">
-        <img src="{{asset('images/devmarketer-logo.png')}}" alt="DevMarketer logo">
+        <img src="{{asset('images/logo-empresa.png')}}" alt="[Logo Empresa]">
       </a>
 
       @if (Request::segment(1) == "manage")
-        <a class="navbar-item is-hidden-desktop" id="admin-slideout-button">
+        <a id="admin-slideout-button" class="navbar-item is-hidden-desktop" >
           <span class="icon">
             <i class="fa fa-arrow-circle-right"></i>
           </span>
@@ -21,9 +21,9 @@
     </div>
     <div class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item is-tab is-active">Learn</a>
-        <a class="navbar-item is-tab">Discuss</a>
-        <a class="navbar-item is-tab">Share</a>
+        <a href="{{route('home')}}" class="navbar-item is-tab is-active">Home</a>
+        <a class="navbar-item is-tab">Productos</a>
+        <a class="navbar-item is-tab">Servicios</a>
       </div> <!-- end of .navbar-start -->
 
 
@@ -33,24 +33,25 @@
           <a href="{{route('register')}}" class="navbar-item is-tab">Join the Community</a>
         @else
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">Hey {{Auth::user()->name}}</a>
+            <a class="navbar-link">Hola {{Auth::user()->name}}</a>
             <div class="navbar-dropdown is-right" >
-              <a href="#" class="navbar-item">
+               <a href="{{route('manage.dashboard')}}" class="navbar-item">
+                <span class="icon">
+                  <i class="fa fa-fw fa-cog m-r-5"></i>
+                </span>Panel de Inicio
+              </a>
+              <a href="{{route('manage.dashboard')}}" class="navbar-item">
                 <span class="icon">
                   <i class="fa fa-fw fa-user-circle-o m-r-5"></i>
                 </span>Profile
               </a>
-
-              <a href="#" class="navbar-item">
+                <hr class="navbar-divider">
+              <a href="{{route('manage.dashboard')}}" class="navbar-item">
                 <span class="icon">
                   <i class="fa fa-fw fa-bell m-r-5"></i>
                 </span>Notifications
               </a>
-              <a href="{{route('manage.dashboard')}}" class="navbar-item">
-                <span class="icon">
-                  <i class="fa fa-fw fa-cog m-r-5"></i>
-                </span>Manage
-              </a>
+             
               <hr class="navbar-divider">
               <a href="{{route('logout')}}" class="navbar-item" onclick="event.preventDefault();
                          document.getElementById('logout-form').submit();">

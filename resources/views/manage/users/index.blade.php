@@ -4,10 +4,10 @@
     <div class="flex-container">
       <div class="columns m-t-10">
         <div class="column">
-          <h1 class="title">Manage Users</h1>
+          <h1 class="title">Usuarios de Sistema</h1>
         </div>
         <div class="column">
-          <a href="{{route('users.create')}}" class="button is-primary is-pulled-right"><i class="fa fa-user-plus m-r-10"></i> Create New User</a>
+          <a href="{{route('users.create')}}" class="button is-primary is-pulled-right"><i class="fa fa-user-plus m-r-10"></i>Crear Nuevo Usario</a>
         </div>
       </div>
       <hr class="m-t-0">
@@ -18,9 +18,9 @@
             <thead>
               <tr>
                 <th>id</th>
-                <th>Name</th>
+                <th>Nombre</th>
                 <th>Email</th>
-                <th>Date Created</th>
+                <th>Fecha Creado</th>
                 <th></th>
               </tr>
             </thead>
@@ -40,6 +40,6 @@
         </div>
       </div> <!-- end of .card -->
 
-      {{$users->links()}}
+      {{ $users->links('vendor.pagination.default') }}
     </div>
 @endsection

@@ -17823,7 +17823,7 @@ a.is-muted:hover {
 }
 
 .title.is-admin {
-  font-weight: 300;
+  font-weight: 250;
 }
 
 .widget-area {
@@ -17849,7 +17849,7 @@ a.is-muted:hover {
 }
 
 .widget-area.author-widget .selected-author .author .subtitle {
-  font-weight: 300;
+  font-weight: 250;
   font-size: 0.8em;
 }
 

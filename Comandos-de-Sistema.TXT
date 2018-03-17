@@ -1,0 +1,63 @@
+1.- COMPOSER
+************
+Composer is a major part of the Laravel MVC Framework, but it also exists without Laravel. In fact you could use it in any project. This article digs into the different files that are used by composer
+
+Este archivo vendor/composer/autoload_classmap.php se regenera cada vez que se ejecuta el comando dump-autoload para incluir en autoload_classmap
+- Ejecutar este comando para cargar cualquier cambio en las CLASES del Frameqork de Laravel
+	mac-book-pro$ composer dump-autoload
+
+Instalacion de Vendors para Laravel
+- LaraFlash
+	nino$ composer require devmarketer/laraflash
+
+2.- ARTISAN
+***********
+- Crear Controladores [make:controller]
+	Con la bandera --resource para agregar todas las funciones CRUD a la clase del controlador recien creada.
+	
+	mac-book-pro$ php artisan make:controller UserController --resource
+
+- Publish Vendor (ej: Pagination) a resurces/views para su uso. 
+	mac-book-pro$ php artisan vendor:publish --tag=laravel-pagination
+
+- Crear Migration
+	* mac-book-pro$ php artisan make:migration create_posts_table --create=posts
+
+	* Crea la tabla en base de datos segun el esquema descrito en la migration.
+	mac-book-pro$ php artisan migrate
+
+	* Vuelve atras en la creacion de tablas de base de datos
+	mac-book-pro$ php artisan migrate:reset	
+- Seed tablas base datos:
+	* msoto$ php artisan db:seed
+
+- Agregar Observers para manipular el model. Se conecta a traves del archivo app/Providers/appServerProviders.php o se crea un nuevo archivo para proveedor dond eunimos la relacion que tendra el UserModel con el UserObserver.
+	* msoto$ php artisan make:provider ObserverServiceProvider
+
+
+
+
+3.- NPM (Usar en su lugar YARN cuando corresponda)
+*******
+	$sudo npm install npm@latest -g
+
+	3.1.-  $npm run watch
+
+
+	3.2.- Instalar paquetes solo para el modo Development:
+		$npm install bulma --save-dev
+
+
+4.- YARN
+***********
+
+4.1.- Los siguientes comandos para instalar:
+ 		$yarn add bulma --dev
+ 		$yarn add buefy --dev
+ 		$yarn add font-awesome --dev
+ 		$yarn add slug --dev
+
+
+
+
+

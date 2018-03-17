@@ -30,20 +30,27 @@
 
           <div class="field">
             <label for="password" class="label">Password</label>
-            <b-radio-group v-model="password_options">
-              <div class="field">
-                <b-radio name="password_options" value="keep">Do Not Change Password</b-radio>
-              </div>
-              <div class="field">
-                <b-radio name="password_options" value="auto">Auto-Generate New Password</b-radio>
-              </div>
-              <div class="field">
-                <b-radio name="password_options" value="manual">Manually Set New Password</b-radio>
-                <p class="control">
-                  <input type="text" class="input" name="password" id="password" v-if="password_options == 'manual'" placeholder="Manually give a password to this user">
-                </p>
-              </div>
-            </b-radio-group>
+            
+            <div class="field">
+              <b-radio name="password_options" v-model="radio" native-value="keep" size="is-medium">Mantener la misma Password</b-radio>
+            </div>
+            <div class="field">
+              <b-radio name="password_options" v-model="radio" native-value="auto" size="is-medium" >Auto-Generar Nueva Password</b-radio>
+            </div>
+            <div class="field">
+              <b-radio name="password_options" v-model="radio" native-value="manual" size="is-medium" >Manualmente Set Nueva Password</b-radio>
+            </div>
+            <div class="field">
+              <p class="control">
+                <input type="text" name="password" id="password" class="input" v-if="radio == 'manual'" placeholder="Escribe tu password">
+              </p>
+            </div>
+            <!--<div class="field">
+              <input v-model="mensajito">
+                
+            </div>-->
+   
+
           </div>
         </div> <!-- end of .column -->
 
@@ -76,8 +83,11 @@
     var app = new Vue({
       el: '#app',
       data: {
-        password_options: 'keep',
-        rolesSelected: {!! $user->roles->pluck('id') !!}
+        radio: 'keep',
+        //password_options: 'manual',}}
+        rolesSelected: {!! $user->roles->pluck('id') !!},
+        mensajito: 'TREMENDO',
+
       }
     });
 

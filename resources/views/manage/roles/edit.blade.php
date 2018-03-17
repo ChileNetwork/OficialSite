@@ -4,7 +4,7 @@
   <div class="flex-container">
     <div class="columns m-t-10">
       <div class="column">
-        <h1 class="title">Edit {{$role->display_name}}</h1>
+        <h1 class="title">Editar "{{$role->display_name}}"</h1>
       </div>
     </div>
     <hr class="m-t-0">
@@ -50,7 +50,7 @@
             <article class="media">
               <div class="media-content">
                 <div class="content">
-                  <h2 class="title">Permissions:</h2>
+                  <h2 class="title">Permisos:</h2>
                     @foreach ($permissions as $permission)
                       <div class="field">
                         <b-checkbox v-model="permissionsSelected" :native-value="{{$permission->id}}">{{$permission->display_name}} <em>({{$permission->description}})</em></b-checkbox>
@@ -60,8 +60,14 @@
               </div>
             </article>
           </div> <!-- end of .box -->
+<?php 
+/*$rols = $role->permissions;
+foreach ($rols as $element):
+  print_r($element->display_name);
+endforeach;*/
+?>
 
-          <button class="button is-primary">Save Changes to Role</button>
+          <button class="button is-primary">Guardar Cambios en Rol</button>
         </div>
       </div>
     </form>

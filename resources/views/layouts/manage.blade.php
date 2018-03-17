@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>DevMarketer - MANAGEMENT</title>
+    <title>ChileNetwork - MANAGEMENT</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -20,7 +20,7 @@
 
     @include('_includes.nav.manage')
 
-    <div class="management-area" id="app">
+    <div id="app" class="management-area">
       @yield('content')
     </div>
 

@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Role;
+
 class ManageController extends Controller
 {
     public function index()
     {
-      return redirect()->route('manage.dashboard');
+    	$roles = Role::all();
+      	return redirect()->route('manage.dashboard')->withRoles($roles);
     }
 
     public function dashboard()

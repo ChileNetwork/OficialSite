@@ -1,0 +1,22 @@
+- LARAVEL PACKAGE
+*****************
+
+
+
+
+
+- SESSIONS
+************
+
+Session::flash
+
+
+
+- COLLECTIONS : wrapper for working with arrays of data
+*************
+
+
+
+
+LaraFlash : Extiende Collections de Laravel
+*********

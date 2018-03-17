@@ -5,13 +5,14 @@
   <div class="hero-body">
     <div class="container">
         <pre>
-            {{$user}}
+            
         </pre>
       <h1 class="title">
-        Dashboard: Panel 
+        Panel de Administracion <br>
+        Usuario: <span style="color:red;"> {{Auth::user()->name}}</span>
       </h1>
       <h2 class="subtitle">
-        administracion de [Nombre_Empresa]
+        [Tu-Empresa]
       </h2>
       <div class="card-body">
             @if (session('status'))
@@ -20,7 +21,7 @@
                 </div>
             @endif
 
-            Este es el PANEL de administrador! {{}}
+        
         </div>
     </div>
   </div>
